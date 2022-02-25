@@ -3,23 +3,16 @@ version: "3"
 services:
   redis-server:
     image: redis
-#    container_name: redis-server
-#    ports:
-#      - "6379:6379"
-#    restart: always
-#    networks:
-#      - backend
+    container_name: redis-server
+    restart: always
+    volumes:
+      - redis-data:/data
   spring-app:
     build: .
-#    container_name: spring-app
     depends_on:
       - redis-server
     ports:
       - "7003:7003"
-#    restart: always
-#    networks:
-#      - backend
-#volumes:
-#  redis-data:
-#networks:
-#  backend:
+    restart: always
+volumes:
+  redis-data:
