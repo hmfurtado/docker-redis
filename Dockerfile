@@ -4,6 +4,6 @@ RUN mkdir /app
 
 WORKDIR /app
 
-COPY ./target/*jar /app/app.jar
+COPY ./target/*jar .
 
 ENTRYPOINT java -jar app.jar
