@@ -10,7 +10,7 @@ import redis.clients.jedis.Jedis;
 @RequestMapping("/")
 public class VisitorCounter {
 
-    String url = "redis-server";
+    String url = "localhost";
     Integer port = 6379;
 
     @GetMapping
