@@ -1,5 +1,7 @@
 package com.hmfurtado.docker.redis;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,9 +10,12 @@ import redis.clients.jedis.Jedis;
 
 @RestController
 @RequestMapping("/")
+@PropertySource("classpath:application.properties")
 public class VisitorCounter {
 
-    String url = "localhost";
+    @Value("${redis.url}")
+    String url;
+
     Integer port = 6379;
 
     @GetMapping
