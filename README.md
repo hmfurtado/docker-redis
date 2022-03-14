@@ -10,7 +10,7 @@ Access *localhost:7003/reset* to reset key "visitors".
 
 - localhost:7003/reset
 
-### Run with command:
+### Run with docker-compose:
     docker compose up
 
 ### Run local:
